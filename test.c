@@ -8,7 +8,9 @@
 #include "config.h"
 #endif
 
-i am a pen.
+void test()
+{
+}
 
 
 
