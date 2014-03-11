@@ -1,4 +1,6 @@
 
+[![Build Status](https://travis-ci.org/syngan/SANDBOX.png?branch=master)](https://travis-ci.org/syngan/SANDBOX)
+
 test
 
-$B$F$9$H(B euc
+てすと euc

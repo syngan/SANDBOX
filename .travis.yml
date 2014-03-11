@@ -1,0 +1,7 @@
+before_script:
+  - uname -a
+  - sudo apt-get install libgmp-dev
+
+script:
+  - sudo ls
+
