@@ -1,4 +1,7 @@
 
+
+SUGIT=
+GITHOME=$(HOME)/
 all: apt git user gitlab-shell database
 
 apt:
@@ -23,18 +26,18 @@ user:
 	sudo adduser --disabled-login --gecos 'GitLab' git
 
 gitlab-shell:
-	cd /home/git
+	cd $(HOME)
 	ls -lad .
-	sudo -u git -H git clone https://gitlab.com/gitlab-org/gitlab-shell.git -b v1.8.0
+	$(SUGIT) git clone https://gitlab.com/gitlab-org/gitlab-shell.git -b v1.8.0
 	cd gitlab-shell
-	sudo -u git -H cp config.yml.example config.yml
+	$(SUGIT) cp config.yml.example config.yml
 # # Edit config and replace gitlab_url
 # # with something like 'http://domain.com/'
-#	sudo -u git -H editor config.yml
-	sudo -u git -H ./bin/install
+#	$(SUGIT) editor config.yml
+	$(SUGIT) ./bin/install
 
 database:
 	pwd
 	sudo apt-get install -y postgresql-9.1 postgresql-client libpq-dev
 	sudo -u postgres psql -d template1 < postgress.in
-	sudo -u git -H psql -d gitlabhq_production
+	$(SUGIT) psql -d gitlabhq_production
