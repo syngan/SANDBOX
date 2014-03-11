@@ -1,7 +1,6 @@
 before_script:
   - uname -a
-  - sh ./install-gitlab.sh
-  - rehash
+  - make
 
 script:
   - sudo ls
