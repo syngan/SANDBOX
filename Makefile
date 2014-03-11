@@ -29,8 +29,10 @@ gitlab-shell:
 	cd $(HOME)
 	ls -lad .
 	$(SUGIT) git clone https://gitlab.com/gitlab-org/gitlab-shell.git -b v1.8.0
-	cd gitlab-shell
 	ls
+	pwd
+	cd $(HOME)/gitlab-shell
+	pwd
 	$(SUGIT) sed 's|gitlab_url: .*|gitlab_url: "http://localhost:1192/"|' config.yml.example > config.yml
 # # Edit config and replace gitlab_url
 # # with something like 'http://domain.com/'
