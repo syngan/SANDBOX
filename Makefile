@@ -1,7 +1,7 @@
 
 
 SUGIT=
-GITHOME=$(HOME)/
+GITHOME=/tmp
 all: apt git user gitlab-shell database
 
 apt:
@@ -26,14 +26,9 @@ user:
 	sudo adduser --disabled-login --gecos 'GitLab' git
 
 gitlab-shell:
-	cd $(HOME)
-	pwd
-	ls -lad .
+	cd $(GITHOME)
 	$(SUGIT) git clone https://gitlab.com/gitlab-org/gitlab-shell.git -b v1.8.0
-	ls
-	pwd
-	cd $(HOME)/gitlab-shell
-	pwd
+	cd $(GITHOME)/gitlab-shell
 	$(SUGIT) sed 's|gitlab_url: .*|gitlab_url: "http://localhost:1192/"|' config.yml.example > config.yml
 # # Edit config and replace gitlab_url
 # # with something like 'http://domain.com/'
