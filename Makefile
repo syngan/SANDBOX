@@ -24,6 +24,7 @@ user:
 
 gitlab-shell:
 	cd /home/git
+	ls -lad .
 	sudo -u git -H git clone https://gitlab.com/gitlab-org/gitlab-shell.git -b v1.8.0
 	cd gitlab-shell
 	sudo -u git -H cp config.yml.example config.yml
