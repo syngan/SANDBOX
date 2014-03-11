@@ -12,8 +12,9 @@ before_script:
   - make prefix=/usr/local all
   - sudo make prefix=/usr/local install
   - rehash
-  - git --version
 
 script:
   - sudo ls
+  - ruby -v
+  - git --version
 
