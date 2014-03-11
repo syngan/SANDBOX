@@ -27,6 +27,7 @@ user:
 
 gitlab-shell:
 	cd $(HOME)
+	pwd
 	ls -lad .
 	$(SUGIT) git clone https://gitlab.com/gitlab-org/gitlab-shell.git -b v1.8.0
 	ls
