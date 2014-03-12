@@ -10,9 +10,11 @@ apt:
 	sudo update-alternatives --set editor /usr/bin/vim.basic
 #sudo apt-get upgrade -y
 	sudo apt-get install -y build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev curl openssh-server redis-server checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev logrotate
+	touch /tmp/apt-end
 
 git:
 	git --version
+	touch /tmp/git-end
 	# sudo apt-get install -y libcurl4-openssl-dev libexpat1-dev gettext libz-dev libssl-dev build-essential
 	# cd /tmp
 	# curl --progress https://git-core.googlecode.com/files/git-1.8.5.2.tar.gz | tar xz
@@ -24,9 +26,12 @@ git:
 
 user:
 	sudo adduser --disabled-login --gecos 'GitLab' git
+	touch /tmp/user-end
 
 gitlab-shell:
 	cd $(GITHOME)
+	which git
+	git --version
 	$(SUGIT) git clone https://gitlab.com/gitlab-org/gitlab-shell.git -b v1.8.0
 	ls -l $(GITHOME)
 	cd $(GITHOME)/gitlab-shell
