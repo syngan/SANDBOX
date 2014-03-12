@@ -32,7 +32,8 @@ gitlab-shell:
 	cd $(GITHOME)
 	which git
 	git --version
-	$(SUGIT) git clone https://gitlab.com/gitlab-org/gitlab-shell.git -b v1.8.0
+#	$(SUGIT) git clone https://gitlab.com/gitlab-org/gitlab-shell.git -b v1.8.0
+	$(SUGIT) git clone https://gitlab.com/gitlab-org/gitlab-shell.git
 	ls -l $(GITHOME)
 	cd $(GITHOME)/gitlab-shell
 	$(SUGIT) sed 's|gitlab_url: .*|gitlab_url: "http://localhost:1192/"|' config.yml.example > config.yml
